@@ -44,15 +44,29 @@ window.addEventListener('load', () => {
                     newIcon = "CLEAR_DAY";
                 }
                 if (icon === "01n") {
-                    icon = "CLEAR_NIGHT";
+                    newIcon = "CLEAR_NIGHT";
                 }
                 if (icon === "02d") {
-                    icon = "PARTLY_CLOUDY_DAY";
+                    newIcon = "PARTLY_CLOUDY_DAY";
                 }
-
-                // if (icon === "02n") icon = "PARTLY_CLOUDY_NIGHT";
-                // if (icon === "03d" || icon === "O4d" || icon === "O3n" || icon === "04n") icon = "CLOUDY";
-                // if (icon === "09d" || icon === "09n" || icon === "10d" || icon === "10n") icon = "RAIN";
+                if (icon === "02n") {
+                    newIcon = "PARTLY_CLOUDY_NIGHT";
+                }
+                if (icon === "03d" || icon === "O4d" || icon === "O3n" || icon === "04n") {
+                    newIcon = "CLOUDY";
+                }
+                if (icon === "09d" || icon === "09n" || icon === "10d" || icon === "10n") { 
+                    newIcon = "RAIN";
+                }
+                if (icon === "11d" || icon === "11n") { 
+                    newIcon = "SLEET";
+                }
+                if (icon === "13d" || icon === "13n") { 
+                    newIcon = "SNOW";
+                }
+                if (icon === "50d" || icon === "50n") { 
+                    newIcon = "WIND";
+                }
 
                 console.log(newIcon);
 
