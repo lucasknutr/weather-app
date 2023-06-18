@@ -12,7 +12,7 @@ window.addEventListener('load', () => {
     let long;
     let lat;
     let temperatureDegree = document.querySelector(".temperature-degree");
-    let description = document.querySelector(".description");
+    let tempDescription = document.querySelector(".description");
     let locationTimezone = document.querySelector(".location-timezone");
 
     if(navigator.geolocation) {
@@ -31,16 +31,23 @@ window.addEventListener('load', () => {
                 console.log(data);
                 const { temp } = data.main;
                 const { name } = data;
-                const { main } = data.weather[0];
+                const { description, icon } = data.weather[0];
                 temperatureDegree.textContent = `${((temp - 273.15).toFixed())}`;
                 locationTimezone.textContent = name;
-                description.textContent = main;
-                
+                tempDescription.textContent = description;
+                document.querySelector("img").src = `http://openweathermap.org/img/w/${icon}.png`;
             });
         });
     } else {
         alert("I'm sorry, this website only works when you allow it to access your geolocation!");
     }
+
+    // const setIcons = (icon, iconID) => {
+    //     const skycons = new skycons({color: white});
+    //     const currentIcon = icon.toUpperCase();
+    //     skycons.play();
+    //     return skycons.set(iconID, skycons[currentIcon]);
+    // }
 
 
     
