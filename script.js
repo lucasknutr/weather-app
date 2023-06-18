@@ -87,5 +87,17 @@ window.addEventListener('load', () => {
     }
 
 
+    if (temperatureDegree.textContent > "25") {
+        document.body.style.background = "linear-gradient(to right, rgb(255, 120, 0), rgb(249, 240, 107))";
+    }
+
+    if (25 > temperatureDegree.textContent > 10) {
+        document.body.style.background = "linear-gradient(to right, rgb(87, 227, 137), rgb(98, 160, 234))";
+    }
+
+    if(temperatureDegree.textContent < 10) {
+        document.body.style.background = "linear-gradient(to right, rgb(53, 132, 228), rgb(50, 56, 203))"
+    }
+
     
 })
