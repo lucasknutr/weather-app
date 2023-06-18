@@ -31,23 +31,46 @@ window.addEventListener('load', () => {
                 console.log(data);
                 const { temp } = data.main;
                 const { name } = data;
-                const { description, icon } = data.weather[0];
+                const { description } = data.weather[0];
+                let icon = data.weather[0].icon;
+                let newIcon;
+
                 temperatureDegree.textContent = `${((temp - 273.15).toFixed())}`;
                 locationTimezone.textContent = name;
                 tempDescription.textContent = description;
-                document.querySelector("img").src = `http://openweathermap.org/img/w/${icon}.png`;
+
+                // turn openweathermap icons into skycons
+                if (icon === "01d") {
+                    newIcon = "CLEAR_DAY";
+                }
+                if (icon === "01n") {
+                    icon = "CLEAR_NIGHT";
+                }
+                if (icon === "02d") {
+                    icon = "PARTLY_CLOUDY_DAY";
+                }
+
+                // if (icon === "02n") icon = "PARTLY_CLOUDY_NIGHT";
+                // if (icon === "03d" || icon === "O4d" || icon === "O3n" || icon === "04n") icon = "CLOUDY";
+                // if (icon === "09d" || icon === "09n" || icon === "10d" || icon === "10n") icon = "RAIN";
+
+                console.log(newIcon);
+
+                setIcons(newIcon, document.querySelector(".icon"));
+
+
             });
         });
     } else {
         alert("I'm sorry, this website only works when you allow it to access your geolocation!");
     }
 
-    // const setIcons = (icon, iconID) => {
-    //     const skycons = new skycons({color: white});
-    //     const currentIcon = icon.toUpperCase();
-    //     skycons.play();
-    //     return skycons.set(iconID, skycons[currentIcon]);
-    // }
+    const setIcons = (icon, iconID) => {
+        const skycons = new Skycons({color: "white"});
+        const currentIcon = icon.toUpperCase();
+        skycons.play();
+        return skycons.set(iconID, Skycons[currentIcon]);
+    }
 
 
     
