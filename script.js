@@ -72,6 +72,19 @@ window.addEventListener('load', () => {
 
                 setIcons(newIcon, document.querySelector(".icon"));
 
+                let degreeMethod = document.querySelector(".degree-method");
+
+                temperatureDegree.addEventListener("click", () => {
+                    if (degreeMethod.textContent === "C"){
+                    temperatureDegree.textContent = Math.floor((Number(temperatureDegree.textContent) * 1.8) + 32 + "");
+                    degreeMethod.textContent = "F";
+                    } else {
+                        temperatureDegree.textContent = `${((temp - 273.15).toFixed())}`;
+                        degreeMethod.textContent = "C";
+                    }
+                
+                })
+
 
             });
         });

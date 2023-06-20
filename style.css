@@ -32,6 +32,12 @@ body {
     display: flex;
     align-items: center;
     cursor: pointer;
+    transition: 0.55s all;
+}
+
+.degree-section:hover {
+    transform: scale(1.2);
+    color: black;
 }
 
 .degree-section span {
@@ -41,4 +47,33 @@ body {
 
 .degree-section h2 {
     font-size: 40px;
+}
+
+
+
+/* container  */
+.description-box {
+    display: inline-block;
+}
+
+.description {
+    font-size: 24px;
+    letter-spacing: 3px;
+    border-right: 3px solid;
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    animation: 
+        typing 3s ,
+        cursor .4s step-end infinite alternate;
+}
+
+/* cursor blinking */
+@keyframes cursor {
+    50% { border-color: transparent }
+}
+
+/* typing effect */
+@keyframes typing {
+    from { width: 0 }
 }
