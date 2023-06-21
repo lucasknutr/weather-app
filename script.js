@@ -1,15 +1,16 @@
-// Cold Weather : background: linear-gradient(to right, rgb(53, 132, 228), rgb(50, 56, 203));
-// Hot Weather : background: linear-gradient(to right, rgb(255, 120, 0), rgb(249, 240, 107));
-// Regular: background: linear-gradient(to right, rgb(87, 227, 137), rgb(98, 160, 234));
-// My API key: https://api.openweathermap.org/data/3.0/onecall?lat={lat}&lon={lon}&appid=3f780dc80f35ddcbdcb3c1eae8bd4e7b
-// Kelvin to Celsius: K = C + 273.15 || Kelvin to Fahrenheit: K − 273.15) × 9/5 + 32 = °F
-// 
-// Get geolocation info from the user once page is loaded
+// * Cold Weather : background: linear-gradient(to right, rgb(53, 132, 228), rgb(50, 56, 203));
+// * Hot Weather : background: linear-gradient(to right, rgb(255, 120, 0), rgb(249, 240, 107));
+// * Regular: background: linear-gradient(to right, rgb(87, 227, 137), rgb(98, 160, 234));
+// ? My API key: https://api.openweathermap.org/data/3.0/onecall?lat={lat}&lon={lon}&appid=3f780dc80f35ddcbdcb3c1eae8bd4e7b
+// ? Kelvin to Celsius: K = C + 273.15 || Kelvin to Fahrenheit: K − 273.15) × 9/5 + 32 = °F
 
 
+// * Execute event after load
 
 window.addEventListener('load', () => {
+    // * longtidude * //
     let long;
+    // * latitude * //
     let lat;
     let temperatureDegree = document.querySelector(".temperature-degree");
     let tempDescription = document.querySelector(".description");
