@@ -60,11 +60,12 @@ body {
     font-size: 24px;
     letter-spacing: 3px;
     border-right: 3px solid;
+    padding-right: 10px;
     width: 100%;
     white-space: nowrap;
     overflow: hidden;
     animation: 
-        typing 3s steps(18) ,
+        typing 3s steps(18) infinite,
         cursor .4s step-end infinite alternate;
 }
 
